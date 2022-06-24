@@ -1,0 +1,18 @@
+name: deploy prd
+
+on:
+  workflow_run:
+    workflows:
+      - on release
+    branches:
+      - master
+    types:
+      - completed
+
+jobs:
+  git_status:
+    runs-on: ubuntu-latest
+    if: ${{ github.event.workflow_run.conclusion == 'success' }}
+    steps:
+      - uses: actions/checkout@v3
+      - run: git status
