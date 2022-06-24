@@ -3,7 +3,7 @@ name: on push
 on:
   push:
     tags-ignore:
-      - "**"
+      - '**'
 
 jobs:
   git_status:
