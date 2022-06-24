@@ -4,10 +4,10 @@ on:
   workflow_run:
     workflows:
       - on push
-    branches:
-      - develop
     types:
       - completed
+    branches:
+      - develop
 
 jobs:
   git_status:
@@ -15,4 +15,6 @@ jobs:
     if: ${{ github.event.workflow_run.conclusion == 'success' }}
     steps:
       - uses: actions/checkout@v3
+        with:
+          ref: ${{ github.event.workflow_run.head_branch }}
       - run: git status
