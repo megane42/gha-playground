@@ -21,5 +21,5 @@ jobs:
       - uses: docker/setup-buildx-action@v2
       - uses: crazy-max/ghaction-github-runtime@v2
       - run: docker images
-      - run: docker buildx build -t megane42/test -o type=docker --cache-to=type=gha --cache-from=type=gha .
+      - run: docker buildx build -t megane42/test --output=docker --cache-to=type=gha --cache-from=type=gha .
       - run: docker images
