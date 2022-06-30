@@ -13,3 +13,13 @@ jobs:
     steps:
       - uses: actions/checkout@v3
       - run: git status
+
+  docker-build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - uses: docker/setup-buildx-action@v2
+      - uses: crazy-max/ghaction-github-runtime@v2
+      - run: docker images
+      - run: docker buildx build -t megane42/test --output=type=docker --cache-to=type=gha --cache-from=type=gha .
+      - run: docker images
