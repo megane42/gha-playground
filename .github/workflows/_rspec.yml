@@ -1,0 +1,12 @@
+name: rspec
+
+on:
+  workflow_call:
+
+jobs:
+  rspec:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+      - run: git status
+      - run: echo '${{ toJSON(github) }}'
