@@ -1,11 +1,13 @@
-name: on push
+name: test
 
 on:
+  pull_request:
+    paths-ignore:
+      - 'infrastructure/**'
   push:
     branches:
-      - '**'
-    tags-ignore:
-      - '**'
+      - develop
+      - master
 
 jobs:
   git_status:
