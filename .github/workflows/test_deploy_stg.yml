@@ -1,0 +1,12 @@
+name: run_test_deploy_stg
+
+on:
+  push:
+    branches:
+      - develop
+
+jobs:
+  test:
+    uses: ./.github/workflows/_rspec.yml
+  deploy:
+    uses: ./.github/workflows/_deploy.yml

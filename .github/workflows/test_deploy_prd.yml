@@ -1,0 +1,12 @@
+name: run_test_deploy_prd
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test:
+    uses: ./.github/workflows/_rspec.yml
+  deploy:
+    uses: ./.github/workflows/_deploy.yml
