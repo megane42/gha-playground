@@ -1,9 +1,10 @@
-name: test
+name: test2
 
 on:
-  pull_request:
-    paths-ignore:
-      - 'infrastructure/**'
+  push:
+    branches:
+      - develop
+      - master
 
 jobs:
   git_status:
