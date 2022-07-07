@@ -3,11 +3,11 @@ name: deploy prd
 on:
   workflow_run:
     workflows:
-      - on release
+      - test
     types:
       - completed
-
-
+    branches:
+      - master
 
 jobs:
   git_status:
