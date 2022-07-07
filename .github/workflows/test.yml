@@ -4,9 +4,6 @@ on:
   pull_request:
     paths-ignore:
       - 'infrastructure/**'
-    branches-ignore:
-      - develop
-      - master
   push:
     branches:
       - develop
